@@ -2,7 +2,7 @@
 
 把分散的通知整理成日历和课表，核对后再入历，并通过邮件提醒。个人 Windows 桌面应用，当前版本 **0.3.0**。
 
-![日历周视图](docs/screenshots/calendar.png)
+
 
 ## 能做什么
 
@@ -16,7 +16,7 @@
 
 ## 安装使用
 
-Windows 11 x64。发布后从仓库右侧 **Releases** 获取 `CampusCalendar-Setup-0.3.0-x64.exe`；使用者无需安装Node或Python。当前源码包本身不包含安装程序。
+Windows 11 x64。从仓库右侧 [Releases](https://github.com/Makashibata02/campus-notice-calendar/releases/latest) 获取 `CampusCalendar-Setup-0.3.0-x64.exe`；使用者无需安装Node或Python。当前源码包本身不包含安装程序。
 
 1. 在设置中填写并保存DeepSeek Key。
 2. 填写SMTP主机、端口、TLS选项、发件邮箱、授权码和收件邮箱，保存并测试。QQ邮箱可使用 `smtp.qq.com`、465、隐式TLS；授权码来自发件邮箱，收件邮箱无需开启SMTP。

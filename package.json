@@ -1,0 +1,72 @@
+{
+  "name": "campus-calendar",
+  "version": "0.3.0",
+  "private": true,
+  "description": "校园通知日历助手",
+  "author": "Campus Calendar contributors",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "start": "electron .",
+    "test": "node scripts/test.cjs",
+    "pack": "npm run build && electron-builder --win nsis --x64",
+    "rebuild": "electron-builder install-app-deps",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fullcalendar/react": "7.1.3",
+    "adm-zip": "0.6.1",
+    "better-sqlite3": "13.0.3",
+    "nodemailer": "10.3.1",
+    "pdfjs-dist": "6.4.299",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "electron": "45.2.1",
+    "electron-builder": "26.18.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  },
+  "build": {
+    "appId": "cn.campus.noticecalendar",
+    "productName": "校园通知日历助手",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "desktop/**/*",
+      "package.json",
+      "LICENSE",
+      "THIRD_PARTY.md",
+      "DEPENDENCY_LICENSES.txt",
+      "使用说明.html",
+      "assets/**/*"
+    ],
+    "asarUnpack": [
+      "**/*.node"
+    ],
+    "win": {
+      "target": "nsis",
+      "artifactName": "CampusCalendar-Setup-${version}-${arch}.exe",
+      "signExecutable": false,
+      "icon": "assets/app.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false,
+      "createDesktopShortcut": true,
+      "runAfterFinish": false,
+      "installerIcon": "assets/app.ico",
+      "uninstallerIcon": "assets/app.ico"
+    }
+  }
+}
